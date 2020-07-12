@@ -18,6 +18,7 @@ function Cartao(props) {
     category,
     variant,
     audiencia,
+    tempo,
   } = props;
 
   function handleDetails() {
@@ -36,7 +37,9 @@ function Cartao(props) {
               {category}
             </Badge>
             <Card.Text>{description}</Card.Text>
-            <span>{audiencia} parcipantes | Remoto Ou Presencial</span>
+            <span>
+              {audiencia} parcipantes | {tempo} minutos
+            </span>
             <Button onClick={() => handleDetails()} variant="outline-primary">
               Saber mais!
             </Button>

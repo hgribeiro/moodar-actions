@@ -12,7 +12,7 @@ export const IdProvider = ({ children }) => {
   const salvarAction = useCallback((id) => {
     localStorage.setItem('@moodar:id', id);
     setIdToShow(id);
-  });
+  }, []);
 
   return (
     <IdContext.Provider

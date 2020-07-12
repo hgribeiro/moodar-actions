@@ -6,15 +6,15 @@ import GlobalStyle from './styles/global';
 
 import Routes from './routes';
 
-import { IdProvider } from './hooks/Id';
+import { AppProvider } from './hooks/index';
 
 const App = () => (
-  <IdProvider>
+  <AppProvider>
     <GlobalStyle />
     <Router>
       <Routes />
     </Router>
-  </IdProvider>
+  </AppProvider>
 );
 
 export default App;

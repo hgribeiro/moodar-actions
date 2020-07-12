@@ -16,6 +16,6 @@ export const Catalogo = styled.div`
   flex-wrap: wrap;
   padding: 50px;
 
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 `;

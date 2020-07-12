@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
 
+  background-color: #309ae1;
+  padding: 20px;
   section {
     display: flex;
     flex-direction: row;
@@ -11,11 +13,8 @@ export const Container = styled.div`
     align-items: center;
     flex-wrap: wrap;
 
-    background-color: #309ae1;
-
     border-radius: 4px;
 
-    padding: 20px;
     figure {
       width: 90%;
       max-width: 459px;
@@ -46,6 +45,7 @@ export const Container = styled.div`
       .h-title {
         display: flex;
         flex-direction: column;
+        text-align: center;
         align-items: center;
         width: 100%;
         margin-bottom: 50px;
@@ -65,5 +65,13 @@ export const Container = styled.div`
         }
       }
     }
+  }
+`;
+export const Item = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 600px) {
+    flex-direction: row;
   }
 `;

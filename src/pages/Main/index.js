@@ -5,7 +5,7 @@ import { Container, Catalogo } from './styles';
 import Header from '../../components/Header';
 import Cartao from '../../components/Cartao';
 
-import { actions } from '../../Data/data';
+import { actions, categories } from '../../Data/data';
 
 function Main() {
   return (
@@ -18,10 +18,11 @@ function Main() {
             id={action.id}
             photo={action.photo}
             titulo={action.titulo}
-            category={action.category[0]}
-            variant={action.category[1]}
+            category={categories[action.category[0]].nome}
+            variant={categories[action.category[0]].color}
             description={action.description}
             audiencia={action.audiencia}
+            tempo={action.tempo}
           />
         ))}
       </Catalogo>

@@ -34,4 +34,11 @@ export default createGlobalStyle`
     font-family: Verdana, Geneva, Tahoma,sans-serif;
     font-size: 15px;
   }
+  button, input {
+    width:100%;
+  }
+  input {
+    border-radius: 3px;
+    border: 2px;
+  }
 `;

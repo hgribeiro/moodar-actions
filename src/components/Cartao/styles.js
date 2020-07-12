@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: 100%;
+  margin-bottom: 20px;
   @media (min-width: 500px) {
     max-width: 250px;
   }
@@ -13,6 +14,7 @@ export const Container = styled.div`
     .h-card-title {
       font-weight: 600;
       align-self: center;
+      text-align: center;
     }
 
     span {
