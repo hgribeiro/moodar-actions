@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { Container } from './styles';
 import { useAgendamentos } from '../../hooks/Agenda';
@@ -12,10 +13,12 @@ function Form({ id }) {
   const [observacao, setObservacao] = useState('');
 
   const { agendamentos, salvarAgendamento } = useAgendamentos();
+  let history = useHistory();
 
   function handleSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
     salvarAgendamento(parseInt(id));
+    history.push('/agendamentos');
   }
 
   return (

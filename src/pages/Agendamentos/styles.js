@@ -18,3 +18,9 @@ export const Catalogo = styled.div`
   align-items: flex-start;
   justify-content: space-between;
 `;
+export const Title = styled.h2`
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+`;

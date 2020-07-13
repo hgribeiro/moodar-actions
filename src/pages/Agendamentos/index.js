@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Container, Catalogo } from './styles';
+import { Container, Catalogo, Title } from './styles';
 
 import { actions, categories } from '../../Data/data';
 
@@ -26,6 +26,7 @@ function Agendamentos() {
   return (
     <Container>
       <Header />
+      <Title>AGENDAMENTOS</Title>
       <Catalogo>
         {agendamentos.map((action, index) => (
           <Cartao

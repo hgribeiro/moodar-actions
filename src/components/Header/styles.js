@@ -17,6 +17,8 @@ export const Container = styled.header`
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      background-color: #eeeeee;
       b {
         display: none;
         /* margin-left: 0.5rem; */
