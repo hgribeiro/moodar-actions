@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Container, Catalogo } from './styles';
 
@@ -12,17 +12,22 @@ import Header from '../../components/Header';
 
 function Agendamentos() {
   const { agendamentos } = useAgendamentos();
-  const actionsAgendados = actions.filter((action) => {
-    for (let i = 0; i < agendamentos.length; i++) {
-      if (agendamentos[i] === action.id) return true;
-    }
-    return false;
-  });
+  // const [actionsAgendados, setActionsAgendados] = useState();
+  // useEffect(() => {
+  //   const newActionsAgendados = actions.filter((action) => {
+  //     for (let i = 0; i < agendamentos.length; i++) {
+  //       if (agendamentos[i] === action.id) return true;
+  //     }
+  //     return false;
+  //   });
+  //   setActionsAgendados(newActionsAgendados);
+  // }, [agendamentos]);
+  // console.log(actionsAgendados);
   return (
     <Container>
       <Header />
       <Catalogo>
-        {actionsAgendados.map((action, index) => (
+        {agendamentos.map((action, index) => (
           <Cartao
             key={action.id}
             id={action.id}

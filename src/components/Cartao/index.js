@@ -22,7 +22,7 @@ function Cartao({
 }) {
   let history = useHistory();
   const { salvarAction } = useId();
-  const { deltarAgendamento } = useAgendamentos();
+  const { deltarAgendamento, agendamentos } = useAgendamentos();
 
   function handleDetails() {
     salvarAction(id);

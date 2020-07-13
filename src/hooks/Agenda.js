@@ -12,11 +12,10 @@ export const AgendaProvider = ({ children }) => {
     return [];
   });
   const deltarAgendamento = useCallback(
-    (idDeletado) => {
-      console.log('awww');
+    (positionDeletado) => {
       const novoAgendamento = [...agendamentos];
 
-      novoAgendamento.splice(idDeletado, 1);
+      novoAgendamento.splice(positionDeletado, 1);
       console.log(novoAgendamento);
 
       localStorage.setItem(
@@ -32,7 +31,8 @@ export const AgendaProvider = ({ children }) => {
     (idAgendado) => {
       const novoAgendamento = [...agendamentos];
 
-      novoAgendamento.push(idAgendado);
+      const action = actions.find((action) => action.id === idAgendado);
+      novoAgendamento.push(action);
 
       localStorage.setItem(
         '@moodar:idAgendado',
@@ -42,6 +42,13 @@ export const AgendaProvider = ({ children }) => {
     },
     [agendamentos]
   );
+
+  // const newActionsAgendados = actions.filter((action) => {
+  //   for (let i = 0; i < agendamentos.length; i++) {
+  //     if (agendamentos[i] === action.id) return true;
+  //   }
+  //   return false;
+  // });
 
   return (
     <AgendaContext.Provider
