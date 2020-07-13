@@ -6,24 +6,31 @@ import { Button, Card, Badge } from 'react-bootstrap';
 
 import { useId } from '../../hooks/Id';
 import { Redirect } from 'react-router-dom';
+import { useAgendamentos } from '../../hooks/Agenda';
 
-function Cartao(props) {
+function Cartao({
+  id,
+  photo,
+  titulo,
+  description,
+  category,
+  variant,
+  audiencia,
+  tempo,
+  page,
+  index,
+}) {
   let history = useHistory();
   const { salvarAction } = useId();
-  const {
-    id,
-    photo,
-    titulo,
-    description,
-    category,
-    variant,
-    audiencia,
-    tempo,
-  } = props;
+  const { deltarAgendamento } = useAgendamentos();
 
   function handleDetails() {
     salvarAction(id);
     history.push('/action');
+  }
+  function handleDelete() {
+    deltarAgendamento(index);
+    // history.push('/action');
   }
 
   return (
@@ -40,9 +47,16 @@ function Cartao(props) {
             <span>
               {audiencia} parcipantes | {tempo} minutos
             </span>
-            <Button onClick={() => handleDetails()} variant="outline-primary">
-              Saber mais!
-            </Button>
+            {page === 'lista' && (
+              <Button onClick={() => handleDetails()} variant="outline-primary">
+                Saber mais!
+              </Button>
+            )}
+            {page === 'agendamento' && (
+              <Button onClick={() => handleDelete()} variant="outline-danger">
+                Cancelar
+              </Button>
+            )}
           </Card.Body>
         </Card>
       </Container>

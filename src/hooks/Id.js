@@ -19,6 +19,7 @@ export const IdProvider = ({ children }) => {
       value={{
         idToShow,
         salvarAction,
+        actions,
       }}
     >
       {children}

@@ -28,7 +28,7 @@ export const actions = [
   {
     id: 2,
     photo: Acao1,
-    titulo: 'Woklife balance',
+    titulo: 'Worklife balance',
     category: [2],
     description:
       "Some quick example text to build on the card title and make up the bulk of the card's content.",
@@ -64,8 +64,8 @@ export const actions = [
   {
     id: 5,
     photo: Acao1,
-    titulo: 'Além da Tech - Skill',
-    category: [1],
+    titulo: 'Gestãoa',
+    category: [0],
     description:
       "Some quick example text to build on the card title and make up the bulk of the card's content.",
     fulldescription:

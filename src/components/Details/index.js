@@ -45,7 +45,7 @@ function Details() {
                 <small>Remoto</small>
               </Item>
             )}
-            {actions[idToShow].category[0] != 0 && (
+            {actions[idToShow].category[0] !== 0 && (
               <Item>
                 <img src={Presencial} alt="Presencial" />
                 <small>Presencial</small>

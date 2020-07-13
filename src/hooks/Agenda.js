@@ -11,21 +11,44 @@ export const AgendaProvider = ({ children }) => {
 
     return [];
   });
+  const deltarAgendamento = useCallback(
+    (idDeletado) => {
+      console.log('awww');
+      const novoAgendamento = [...agendamentos];
 
-  const salvarAgendamento = useCallback((idAgendado) => {
-    const oldAgendamentos = [...agendamentos];
+      novoAgendamento.splice(idDeletado, 1);
+      console.log(novoAgendamento);
 
-    oldAgendamentos.push(idAgendado);
+      localStorage.setItem(
+        '@moodar:idAgendado',
+        JSON.stringify(novoAgendamento)
+      );
+      setAgendamentos(novoAgendamento);
+    },
+    [agendamentos]
+  );
 
-    localStorage.setItem('@moodar:idAgendado', JSON.stringify(oldAgendamentos));
-    setAgendamentos(oldAgendamentos);
-  });
+  const salvarAgendamento = useCallback(
+    (idAgendado) => {
+      const novoAgendamento = [...agendamentos];
+
+      novoAgendamento.push(idAgendado);
+
+      localStorage.setItem(
+        '@moodar:idAgendado',
+        JSON.stringify(novoAgendamento)
+      );
+      setAgendamentos(novoAgendamento);
+    },
+    [agendamentos]
+  );
 
   return (
     <AgendaContext.Provider
       value={{
         agendamentos,
         salvarAgendamento,
+        deltarAgendamento,
       }}
     >
       {children}

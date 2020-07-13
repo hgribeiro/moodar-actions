@@ -7,6 +7,7 @@ import { actions, categories } from '../../Data/data';
 import { useAgendamentos } from '../../hooks/Agenda';
 
 import Cartao from '../../components/Cartao';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
 function Agendamentos() {
@@ -21,7 +22,7 @@ function Agendamentos() {
     <Container>
       <Header />
       <Catalogo>
-        {actionsAgendados.map((action) => (
+        {actionsAgendados.map((action, index) => (
           <Cartao
             key={action.id}
             id={action.id}
@@ -32,9 +33,12 @@ function Agendamentos() {
             description={action.description}
             audiencia={action.audiencia}
             tempo={action.tempo}
+            page="agendamento"
+            index={index}
           />
         ))}
       </Catalogo>
+      <Footer />
     </Container>
   );
 }
